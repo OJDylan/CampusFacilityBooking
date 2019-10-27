@@ -8,7 +8,7 @@
             $data['title'] = ucfirst($page); //gets title of the page
 
             $this->load->view('templates/header');
-            $this->load->view('pages/'.$page, $data); //loads the directory of the page and the data it has
+            $this->load->view('pages/'.$page, $data); //loads the directory of the page and passes the data variable
             $this->load->view('templates/footer');
         }
     }
