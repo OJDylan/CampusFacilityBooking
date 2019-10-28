@@ -8,7 +8,7 @@
             $data['bad_times'] = $this->facility_model->getBadTime();
             $data['bas_times'] = $this->facility_model->getBasTime();
             $data['mac_times'] = $this->facility_model->getMacTime();
-            $data['BB_times'] = $this->facility_model->getBBTime();
+            $data['bb_times'] = $this->facility_model->getBBTime();
 
             $this->load->view('templates/header');
             $this->load->view('pages/booking', $data);
