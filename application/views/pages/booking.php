@@ -5,7 +5,7 @@
   Basketball Court</button>
   <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
     <?php foreach($bas_times as $time) : ?>
-      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#BasketballModal"><?php echo date('g:ia', strtotime($time['time'])); ?></a>
+      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal"><?php echo date('g:ia', strtotime($time['time'])); ?></a>
     <?php endforeach; ?>  
   </div>
 </div>
@@ -15,7 +15,7 @@
   Badminton Court</button>
   <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
     <?php foreach($bad_times as $time) : ?>
-      <a class="dropdown-item" href="#"><?php echo date('g:ia', strtotime($time['time'])); ?></a>
+      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal"><?php echo date('g:ia', strtotime($time['time'])); ?></a>
     <?php endforeach; ?>  
   </div>
 </div>
@@ -25,7 +25,7 @@
     Mac Studio</button>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
       <?php foreach($mac_times as $time) : ?>
-        <a class="dropdown-item" href="#"><?php echo date('g:ia', strtotime($time['time'])); ?></a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal"><?php echo date('g:ia', strtotime($time['time'])); ?></a>
       <?php endforeach; ?>  
     </div>
 </div>
@@ -35,16 +35,16 @@
     Black Box</button>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
       <?php foreach($bb_times as $time) : ?>
-        <a class="dropdown-item" href="#"><?php echo date('g:ia', strtotime($time['time'])); ?></a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal"><?php echo date('g:ia', strtotime($time['time'])); ?></a>
       <?php endforeach; ?>  
     </div>
 </div>
 
-<div class="modal" id="BasketballModal">
+<div class="modal" id="modal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modal_title">Title</h5>
+        <h3 class="modal-title" id="modal_title">Title</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -66,6 +66,24 @@
       var time= ($(this).text());
       document.getElementById("booking_details").innerHTML = "Are you sure you wanna book at this time: " + time;
       document.getElementById("modal_title").innerHTML = "Basketball Court";
+    });
+
+    $('#badminton a').on('click', function () {
+      var time= ($(this).text());
+      document.getElementById("booking_details").innerHTML = "Are you sure you wanna book at this time: " + time;
+      document.getElementById("modal_title").innerHTML = "Badminton Court";
+    });
+
+    $('#mac a').on('click', function () {
+      var time= ($(this).text());
+      document.getElementById("booking_details").innerHTML = "Are you sure you wanna book at this time: " + time;
+      document.getElementById("modal_title").innerHTML = "Mac Studio";
+    });
+
+    $('#bb a').on('click', function () {
+      var time= ($(this).text());
+      document.getElementById("booking_details").innerHTML = "Are you sure you wanna book at this time: " + time;
+      document.getElementById("modal_title").innerHTML = "Black Box";
     });
   });
 </script>
