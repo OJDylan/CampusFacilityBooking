@@ -40,6 +40,39 @@
     </div>
 </div>
 
+<h1><p>&nbsp</p>Library Facilities</h1>
+
+<div id="meeting" class="btn-group" role="group" aria-label="Button group with nested dropdown">
+  <button id="btnGroupDrop5" type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Meeting Room</button>
+  <div class="dropdown-menu" aria-labelledby="btnGroupDrop5">
+    <?php foreach($meet_times as $time) : ?>
+      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal"><?php echo date('g:ia', strtotime($time['time'])); ?></a>
+    <?php endforeach; ?>  
+  </div>
+</div>
+
+<div id="brainstorm" class="btn-group" role="group" aria-label="Button group with nested dropdown">
+  <button id="btnGroupDrop6" type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Brainstorming Room</button>
+  <div class="dropdown-menu" aria-labelledby="btnGroupDrop6">
+    <?php foreach($brainstorming_times as $time) : ?>
+      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal"><?php echo date('g:ia', strtotime($time['time'])); ?></a>
+    <?php endforeach; ?>  
+  </div>
+</div>
+
+<div id="learningPod" class="btn-group" role="group" aria-label="Button group with nested dropdown">
+  <button id="btnGroupDrop7" type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Learning Pod</button>
+  <div class="dropdown-menu" aria-labelledby="btnGroupDrop7">
+    <?php foreach($pod_times as $time) : ?>
+      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal"><?php echo date('g:ia', strtotime($time['time'])); ?></a>
+    <?php endforeach; ?>  
+  </div>
+</div>
+
+
 <div class="modal" id="modal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -59,31 +92,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  $(document).ready(function () {
-    $('#basketball a').on('click', function () {
-      var time= ($(this).text());
-      document.getElementById("booking_details").innerHTML = "Are you sure you want to book at this time: " + time;
-      document.getElementById("modal_title").innerHTML = "Basketball Court";
-    });
-
-    $('#badminton a').on('click', function () {
-      var time= ($(this).text());
-      document.getElementById("booking_details").innerHTML = "Are you sure you want to book at this time: " + time;
-      document.getElementById("modal_title").innerHTML = "Badminton Court";
-    });
-
-    $('#mac a').on('click', function () {
-      var time= ($(this).text());
-      document.getElementById("booking_details").innerHTML = "Are you sure you want to book at this time: " + time;
-      document.getElementById("modal_title").innerHTML = "Mac Studio";
-    });
-
-    $('#bb a').on('click', function () {
-      var time= ($(this).text());
-      document.getElementById("booking_details").innerHTML = "Are you sure you want to book at this time: " + time;
-      document.getElementById("modal_title").innerHTML = "Black Box";
-    });
-  });
-</script>
