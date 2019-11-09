@@ -84,7 +84,7 @@
       case 11:
         month = "December";  
     }
-    document.getElementById("month").innerHTML = month;
+    document.getElementById("month").innerHTML = "Current month: " + month;
 </script>
 
 <script>

@@ -26,6 +26,8 @@
                     <a class="nav-link" href="<?php echo base_url(); ?>about">About</a>
                 </li>
             </ul>
+
+            <span class="navbar-text" id="month"></span>
         </div>
     </nav>
 

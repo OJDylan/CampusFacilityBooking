@@ -7,7 +7,7 @@
 <h1><p>&nbsp</p>Step 2: Select Date</h1>
 <div class="container">
   <div class="form-group">
-    <p id="month"></p>
+    
     <label class="col-form-label" for="days">Date</label>
     <select style="width: 10%" class="form-control" id="days">
       <option>-</option>
@@ -16,7 +16,6 @@
 </div>
 
 <h1><p>&nbsp</p>Step 3: Select Facility and Time</h1>
-
 <div class="container">
   <h3><p>&nbsp</p>Campus Facilities</h3>
   <div id="basketball" class="btn-group" role="group" aria-label="Button group with nested dropdown">
