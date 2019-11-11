@@ -1,22 +1,23 @@
-<h1>Step 1: Student ID</h1>
 <div class="container">
-  <label class="col-form-label" for="inputID">Student ID</label>
-  <input style="width: 20%" type="text" class="form-control" placeholder="Student ID" id="inputID">
-</div>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <h1>Step 1: Student ID</h1>
+      <label class="col-form-label" for="inputID">Student ID</label>
+      <input style="width: 40%" type="text" class="form-control" placeholder="Student ID" id="inputID">
+    </div>
 
-<h1><p>&nbsp</p>Step 2: Select Date</h1>
-<div class="container">
-  <div class="form-group">
-    
-    <label class="col-form-label" for="days">Date</label>
-    <select style="width: 10%" class="form-control" id="days">
-      <option>-</option>
-    </select>
+    <div class="form-group col-md-5">
+      <h1>Step 2: Select Date</h1>
+      <label class="col-form-label" for="days">Date</label>
+      <select style="width: 20%" class="form-control" id="days">
+        <option>-</option>
+      </select>
+    </div>
   </div>
 </div>
 
-<h1><p>&nbsp</p>Step 3: Select Facility and Time</h1>
 <div class="container">
+  <h1><p>&nbsp</p>Step 3: Select Facility and Time</h1>
   <h3><p>&nbsp</p>Campus Facilities</h3>
   <div id="basketball" class="btn-group" role="group" aria-label="Button group with nested dropdown">
     <button id="btnGroupDrop1" type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -90,8 +91,6 @@
     </div>
   </div>
 </div>
-
-<p>&nbsp</p>
 
 <div class="modal" id="modal">
   <div class="modal-dialog" role="document">
