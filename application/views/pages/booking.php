@@ -8,8 +8,8 @@
 
     <div class="form-group col-md-5">
       <h1>Step 2: Select Date</h1>
-      <label class="col-form-label" for="days">Date</label>
-      <select style="width: 20%" class="form-control" id="days">
+      <label class="col-form-label" for="date">Date</label>
+      <select style="width: 20%" class="form-control" id="date">
         <option>-</option>
       </select>
     </div>
@@ -102,7 +102,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <p id="booking_details">Text</p>
+        <p id="booking_id">-</p>
+        <p id="booking_date"></p>
+        <p id="booking_time"></p>
+        <br>
+        <p>Confirm booking?</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Confirm</button>
