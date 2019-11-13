@@ -7,52 +7,47 @@
     return document.getElementById("date").value;
   }
 
-  function fillDetails(t) {
-    document.getElementById("booking_id").innerHTML = "Student ID: " + getID();
-    document.getElementById("booking_date").innerHTML = "Booking Date: " + getDate() + " " + getMonth();
-    document.getElementById("booking_time").innerHTML = "Time: " + t;
+  function fillDetails(t, n) {
+    document.getElementById("modal_title").innerHTML = "Booking Confirmation"
+    document.getElementById("booking_venue").value = n;
+    document.getElementById("student_id").value = getID();
+    document.getElementById("booking_date").value = getDate() + " " + getMonth();
+    document.getElementById("booking_time").value = t;
   }
 
   $('#basketball a').on('click', function () {
     var time= ($(this).text());
-    document.getElementById("modal_title").innerHTML = "Basketball Court";
-    fillDetails(time);
+    fillDetails(time, "Basketball Court");
   });
 
   $('#badminton a').on('click', function () {
     var time= ($(this).text());
-    document.getElementById("modal_title").innerHTML = "Badminton Court";
-    fillDetails(time);
+    fillDetails(time, "Badminton Court");
   });
 
   $('#mac a').on('click', function () {
     var time= ($(this).text());
-    document.getElementById("modal_title").innerHTML = "Mac Studio";
-    fillDetails(time);
+    fillDetails(time, "Mac Studio");
   });
 
   $('#bb a').on('click', function () {
     var time= ($(this).text());
-    document.getElementById("modal_title").innerHTML = "Black Box";
-    fillDetails(time);
+    fillDetails(time, "Black Box");
   });
 
   $('#meeting a').on('click', function () {
     var time= ($(this).text());
-    document.getElementById("modal_title").innerHTML = "Meeting Room";
-    fillDetails(time);
+    fillDetails(time, "Meeting Room");
   });
 
   $('#brainstorm a').on('click', function () {
     var time= ($(this).text());
-    document.getElementById("modal_title").innerHTML = "Brainstorming Room";
-    fillDetails(time);
+    fillDetails(time, "Brainstorming Room");
   });
 
   $('#learningPod a').on('click', function () {
     var time= ($(this).text());
-    document.getElementById("modal_title").innerHTML = "Learning Pod";
-    fillDetails(time);
+    fillDetails(time, "Learning Pod");
   });
 </script>
 
