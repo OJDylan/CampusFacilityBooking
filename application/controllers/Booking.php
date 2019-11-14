@@ -19,5 +19,13 @@
             $this->load->view('templates/scripts');
             $this->load->view('templates/footer');
         }
+
+        public function insert(){
+            $this->load->model('facility_model');
+            $this->load->model('library_model');
+
+            $this->facility_model->create_booking();
+            redirect('home');
+        }
     }
 ?>

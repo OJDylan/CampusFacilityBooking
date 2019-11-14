@@ -5,7 +5,6 @@
       <label class="col-form-label" for="inputID">Student ID</label>
       <input style="width: 40%" type="text" class="form-control" placeholder="Student ID" id="inputID">
     </div>
-
     <div class="form-group col-md-5">
       <h1>Step 2: Select Date</h1>
       <label class="col-form-label" for="date">Date</label>
@@ -131,28 +130,26 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <?php echo form_open('booking/insert'); ?>
           <div class="form-group">
             <label for="booking_venue" class="col-form-label">Booking Venue:</label>
-            <input style="width: 50%" type="text" class="form-control" id="booking_venue" readonly="">
+            <input style="width: 50%" type="text" class="form-control"  id="booking_venue" name="booking_venue" readonly="">
           </div>
           <div class="form-group">
             <label for="student_id" class="col-form-label">Student ID:</label>
-            <input style="width: 30%" type="text" class="form-control" id="student_id" readonly="">
+            <input style="width: 30%" type="text" class="form-control" id="student_id" name="student_id" readonly="">
           </div>
           <div class="form-group">
             <label for="booking_date" class="col-form-label">Booking Date:</label>
-            <input style="width: 30%" type="text" class="form-control" id="booking_date" readonly="">
+            <input style="width: 30%" type="text" class="form-control" id="booking_date" name="booking_date" readonly="">
           </div>
           <div class="form-group">
             <label for="booking_time" class="col-form-label">Booking Time:</label>
-            <input style="width: 30%" type="text" class="form-control" id="booking_time" readonly="">
+            <input style="width: 30%" type="text" class="form-control" id="booking_time" name="booking_time" readonly="">
           </div>
+          <button type="submit" class="btn btn-primary">Confirm</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="confirm">Confirm</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

@@ -11,7 +11,7 @@
     document.getElementById("modal_title").innerHTML = "Booking Confirmation"
     document.getElementById("booking_venue").value = n;
     document.getElementById("student_id").value = getID();
-    document.getElementById("booking_date").value = getDate() + " " + getMonth();
+    document.getElementById("booking_date").value = "2019-" + getDate() + "-" + new Date().getMonth();
     document.getElementById("booking_time").value = t;
   }
 

@@ -33,5 +33,17 @@
             }
         }
 
+        public function create_booking(){
+            $facilitydb = $this->load->database('facilitydb', TRUE);
+
+            $insert_data = array(
+                'student_id' => $this->input->post('student_id'),
+                'facility_name' => $this->input->post('booking_venue'),
+                'date' => $this->input->post('booking_date'),
+                'time' => date('H:i', strtotime($this->input->post('booking_time')))
+            );
+
+            return $facilitydb->insert('booked', $insert_data);
+        }
     }
 ?>
