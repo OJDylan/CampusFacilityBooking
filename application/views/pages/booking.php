@@ -130,7 +130,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php echo form_open('booking/insert'); ?>
+        <?php echo form_open('booking/create'); ?>
           <div class="form-group">
             <label for="booking_venue" class="col-form-label">Booking Venue:</label>
             <input style="width: 50%" type="text" class="form-control"  id="booking_venue" name="booking_venue" readonly="">

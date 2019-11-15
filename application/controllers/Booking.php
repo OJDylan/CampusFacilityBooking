@@ -20,7 +20,7 @@
             $this->load->view('templates/footer');
         }
 
-        public function insert(){
+        public function create(){
             $this->load->model('facility_model');
             $this->load->model('library_model');
 
@@ -39,8 +39,8 @@
             }else{
                 $this->facility_model->create_booking($insert_data);
             }
-            
-            redirect('home');
+
+            redirect('success');
         }
     }
 ?>

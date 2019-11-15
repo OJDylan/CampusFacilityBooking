@@ -3,16 +3,16 @@
     return document.getElementById("inputID").value;
   }
 
-  function getDate() {
+  function retrieveDate() {
     return document.getElementById("date").value;
   }
 
   function fillDetails(t, n) {
+    document.getElementById("booking_date").value = "2019-" + new Date().getMonth() + "-" + retrieveDate();
+    document.getElementById("booking_time").value = t;
     document.getElementById("modal_title").innerHTML = "Booking Confirmation"
     document.getElementById("booking_venue").value = n;
     document.getElementById("student_id").value = getID();
-    document.getElementById("booking_date").value = "2019-" + new Date().getMonth() + "-" + getDate();
-    document.getElementById("booking_time").value = t;
   }
 
   $('#basketball a').on('click', function () {
@@ -52,7 +52,7 @@
 </script>
 
 <script>
-  function getMonth(){
+  function retrieveMonth(){
     var month;
       switch (new Date().getMonth()) {
         case 0:
@@ -93,7 +93,7 @@
       }
     return month;
   }
-  document.getElementById("month").innerHTML = "Current month: " + getMonth();
+  document.getElementById("month").innerHTML = "Current month: " + retrieveMonth();
 </script>
 
 <script>

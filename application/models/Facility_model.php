@@ -36,7 +36,7 @@
         public function create_booking($data){
             $facilitydb = $this->load->database('facilitydb', TRUE);
 
-            $facilitydb->insert('booked', $data);
+            return $facilitydb->insert('booked', $data);
         }
     }
 ?>
