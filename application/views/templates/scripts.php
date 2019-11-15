@@ -11,7 +11,7 @@
     document.getElementById("modal_title").innerHTML = "Booking Confirmation"
     document.getElementById("booking_venue").value = n;
     document.getElementById("student_id").value = getID();
-    document.getElementById("booking_date").value = "2019-" + getDate() + "-" + new Date().getMonth();
+    document.getElementById("booking_date").value = "2019-" + new Date().getMonth() + "-" + getDate();
     document.getElementById("booking_time").value = t;
   }
 
@@ -100,9 +100,10 @@
   var year = new Date().getFullYear();
   var month = new Date().getMonth();
   var days = new Date(year, month + 1, 0).getDate();
+  var today = new Date().getDate();
   var result = '';
 
-  for(var i=1; i<=days; i++){
+  for(var i=today + 1; i<=days; i++){
     result += '<option>'+i+'</option>';
   }
 

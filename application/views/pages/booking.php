@@ -147,8 +147,10 @@
             <label for="booking_time" class="col-form-label">Booking Time:</label>
             <input style="width: 30%" type="text" class="form-control" id="booking_time" name="booking_time" readonly="">
           </div>
-          <button type="submit" class="btn btn-primary">Confirm</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Confirm</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </form>
       </div>
     </div>
