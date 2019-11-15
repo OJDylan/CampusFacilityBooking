@@ -24,7 +24,22 @@
             $this->load->model('facility_model');
             $this->load->model('library_model');
 
-            $this->facility_model->create_booking();
+            $time = date('H:i', strtotime($this->input->post('booking_time')));
+            $venue = $this->input->post('booking_venue');
+
+            $insert_data = array(
+                'student_id' => $this->input->post('student_id'),
+                'facility_name' => $venue,
+                'date' => $this->input->post('booking_date'),
+                'time' => $time 
+            );
+
+            if($venue == "Learning Pod" || $venue == "Meeting Room" || $venue == "Brainstorming Room"){
+                $this->library_model->create_booking($insert_data);
+            }else{
+                $this->facility_model->create_booking($insert_data);
+            }
+            
             redirect('home');
         }
     }

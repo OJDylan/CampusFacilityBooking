@@ -25,5 +25,10 @@
             }
         }
 
+        public function create_booking($data){
+            $librarydb = $this->load->database('librarydb', TRUE);
+
+            $librarydb->insert('booked', $data);
+        }
     }
 ?>

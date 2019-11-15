@@ -103,7 +103,7 @@
   var today = new Date().getDate();
   var result = '';
 
-  for(var i=today + 1; i<=days; i++){
+  for(var i=today; i<=days; i++){
     result += '<option>'+i+'</option>';
   }
 
