@@ -24,23 +24,31 @@
             $this->load->model('facility_model');
             $this->load->model('library_model');
 
+            $this->form_validation->set_rules('student_id', 'Student ID', 'required');
+
+            $date = $this->input->post('booking_date');
             $time = date('H:i', strtotime($this->input->post('booking_time')));
             $venue = $this->input->post('booking_venue');
+            $studentID = $this->input->post('student_id');
 
-            $insert_data = array(
-                'student_id' => $this->input->post('student_id'),
-                'facility_name' => $venue,
-                'date' => $this->input->post('booking_date'),
-                'time' => $time 
-            );
-
-            if($venue == "Learning Pod" || $venue == "Meeting Room" || $venue == "Brainstorming Room"){
-                $this->library_model->create_booking($insert_data);
+            if($this->form_validation->run() == FALSE){
+                redirect('fail');
             }else{
-                $this->facility_model->create_booking($insert_data);
+                $insert_data = array(
+                    'student_id' => $studentID,
+                    'facility_name' => $venue,
+                    'date' => $date,
+                    'time' => $time 
+                );
+    
+                if($venue == "Learning Pod" || $venue == "Meeting Room" || $venue == "Brainstorming Room"){
+                    $this->library_model->create_booking($insert_data);
+                }else{
+                    $this->facility_model->create_booking($insert_data);
+                }
+    
+                redirect('success');
             }
-
-            redirect('success');
         }
     }
 ?>
