@@ -37,17 +37,23 @@
                 $insert_data = array(
                     'student_id' => $studentID,
                     'facility_name' => $venue,
-                    'date' => $date,
-                    'time' => $time 
+                    'booking_date' => $date,
+                    'booking_time' => $time 
                 );
     
                 if($venue == "Learning Pod" || $venue == "Meeting Room" || $venue == "Brainstorming Room"){
-                    $this->library_model->create_booking($insert_data);
+                    if($this->library_model->create_booking($insert_data) == FALSE){
+                        redirect('already_booked');
+                    }else{
+                        redirect('success');
+                    }
                 }else{
-                    $this->facility_model->create_booking($insert_data);
+                    if($this->facility_model->create_booking($insert_data) == FALSE){
+                        redirect('already_booked');
+                    }else{
+                        redirect('success');
+                    }
                 }
-    
-                redirect('success');
             }
         }
     }

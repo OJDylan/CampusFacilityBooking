@@ -28,7 +28,17 @@
         public function create_booking($data){
             $librarydb = $this->load->database('librarydb', TRUE);
 
-            return $librarydb->insert('booked', $data);
+            $id = $data['student_id'];
+            $name = $data['facility_name'];
+            $date = $data['booking_date'];
+            $time = $data['booking_time'];
+
+            $query = $librarydb->query("SELECT * FROM booked WHERE facility_name='$name' AND booking_date='$date' AND booking_time='$time'");
+            if($query->num_rows() > 0){
+                return FALSE;
+            }else{
+                return $librarydb->insert('booked', $data);
+            }
         }
     }
 ?>
