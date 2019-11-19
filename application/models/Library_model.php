@@ -40,5 +40,11 @@
                 return $librarydb->insert('booked', $data);
             }
         }
+
+        public function showBookings(){
+            $librarydb = $this->load->database('librarydb', TRUE);
+            $query = $librarydb->query("SELECT * FROM booked ORDER BY DATE(booking_date) ASC;");
+            return $query;
+        }
     }
 ?>

@@ -48,5 +48,11 @@
                 return $facilitydb->insert('booked', $data);
             }
         }
+
+        public function showBookings(){
+            $facilitydb = $this->load->database('facilitydb', TRUE);
+            $query = $facilitydb->query("SELECT * FROM booked ORDER BY DATE(booking_date) ASC;");
+            return $query;
+        }
     }
 ?>
