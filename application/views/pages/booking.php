@@ -1,4 +1,26 @@
 <div class="container">
+    <?php if( $error = $this->session->flashdata('error') ): ?>
+        <div class="alert alert-dismissible alert-danger" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <?php echo $error; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+<div class="container">
+    <?php if( $error = $this->session->flashdata('response') ): ?>
+        <div class="alert alert-dismissible alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <?php echo $error; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+<div class="container">
   <div class="form-row">
     <div class="form-group col-md-5">
       <h1>Step 1: Student ID</h1>
@@ -8,9 +30,7 @@
     <div class="form-group col-md-5">
       <h1>Step 2: Select Date</h1>
       <label class="col-form-label" for="date">Date</label>
-      <select style="width: 20%" class="form-control" id="date">
-        <option>-</option>
-      </select>
+      <input style="width: 40%" type="text" class="form-control" id="datepicker" readonly="">
     </div>
   </div>
 </div>

@@ -32,9 +32,7 @@
             $this->form_validation->set_rules('student_id', 'Student ID', 'required');
             $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
 
-            if($this->form_validation->run() == FALSE){
-                redirect('fail');
-            }else{
+            if($this->form_validation->run()){
                 $insert_data = array(
                     'student_id' => $studentID,
                     'facility_name' => $venue,
@@ -42,11 +40,16 @@
                     'booking_time' => $time 
                 );
     
-                if($this->booking_model->create_booking($insert_data) == FALSE){
-                    redirect('already_booked');
+                if($this->booking_model->create_booking($insert_data)){
+                    $this->session->set_flashdata('response', 'Booking Successful.');
+                    redirect('booking');
                 }else{
-                    redirect('success');
+                    $this->session->set_flashdata('error', 'Facility Already Booked!');
+                    redirect('booking');
                 }
+            }else{
+                $this->session->set_flashdata('error', 'Student ID is required!');
+                redirect('booking');
             }
         }
     }
