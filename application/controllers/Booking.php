@@ -6,6 +6,7 @@
 
             $this->load->model('facility_model');
             $this->load->model('library_model');
+            $this->load->model('booking_model');
             $data['bad_times'] = $this->facility_model->getBadTime();
             $data['bas_times'] = $this->facility_model->getBasTime();
             $data['mac_times'] = $this->facility_model->getMacTime();
@@ -21,15 +22,15 @@
         }
 
         public function create(){
-            $this->load->model('facility_model');
-            $this->load->model('library_model');
-
-            $this->form_validation->set_rules('student_id', 'Student ID', 'required');
+            $this->load->model('booking_model');
 
             $date = $this->input->post('booking_date');
             $time = date('H:i', strtotime($this->input->post('booking_time')));
             $venue = $this->input->post('booking_venue');
             $studentID = $this->input->post('student_id');
+
+            $this->form_validation->set_rules('student_id', 'Student ID', 'required');
+            $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
 
             if($this->form_validation->run() == FALSE){
                 redirect('fail');
@@ -41,18 +42,10 @@
                     'booking_time' => $time 
                 );
     
-                if($venue == "Learning Pod" || $venue == "Meeting Room" || $venue == "Brainstorming Room"){
-                    if($this->library_model->create_booking($insert_data) == FALSE){
-                        redirect('already_booked');
-                    }else{
-                        redirect('success');
-                    }
+                if($this->booking_model->create_booking($insert_data) == FALSE){
+                    redirect('already_booked');
                 }else{
-                    if($this->facility_model->create_booking($insert_data) == FALSE){
-                        redirect('already_booked');
-                    }else{
-                        redirect('success');
-                    }
+                    redirect('success');
                 }
             }
         }

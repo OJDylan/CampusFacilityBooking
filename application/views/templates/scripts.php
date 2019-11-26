@@ -8,7 +8,7 @@
   }
 
   function fillDetails(t, n) {
-    document.getElementById("booking_date").value = "2019-" + new Date().getMonth() + "-" + retrieveDate();
+    document.getElementById("booking_date").value = "2019-" + month + "-" + retrieveDate();
     document.getElementById("booking_time").value = t;
     document.getElementById("modal_title").innerHTML = "Booking Confirmation"
     document.getElementById("booking_venue").value = n;
@@ -98,15 +98,16 @@
 
 <script>
   var year = new Date().getFullYear();
-  var month = new Date().getMonth();
-  var days = new Date(year, month + 1, 0).getDate();
+  var month = new Date().getMonth() + 1;
+  var newMonth = new Date().getMonth() + 2;
   var today = new Date().getDate();
+  var days = new Date(year, month + 1, 0).getDate();
+  var newDays = new Date(year, month + 2, 0).getDate();
   var result = '';
 
-  for(var i=today; i<=days; i++){
-    result += '<option>'+i+'</option>';
+  for(var i=today; i<days; i++){
+    result += '<option>'+ i +'</option>';
   }
-
   $('select#date').empty().html(result);
 </script>
 

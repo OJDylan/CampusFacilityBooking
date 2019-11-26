@@ -32,27 +32,5 @@
                 return $query->result_array();
             }
         }
-
-        public function create_booking($data){
-            $facilitydb = $this->load->database('facilitydb', TRUE);
-
-            $id = $data['student_id'];
-            $name = $data['facility_name'];
-            $date = $data['booking_date'];
-            $time = $data['booking_time'];
-
-            $query = $facilitydb->query("SELECT * FROM booked WHERE facility_name='$name' AND booking_date='$date' AND booking_time='$time'");
-            if($query->num_rows() > 0){
-                return false;
-            }else{
-                return $facilitydb->insert('booked', $data);
-            }
-        }
-
-        public function showBookings(){
-            $facilitydb = $this->load->database('facilitydb', TRUE);
-            $query = $facilitydb->query("SELECT * FROM booked ORDER BY DATE(booking_date) ASC;");
-            return $query;
-        }
     }
 ?>
