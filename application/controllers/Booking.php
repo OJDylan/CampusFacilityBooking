@@ -6,7 +6,6 @@
 
             $this->load->model('facility_model');
             $this->load->model('library_model');
-            $this->load->model('booking_model');
             $data['bad_times'] = $this->facility_model->getBadTime();
             $data['bas_times'] = $this->facility_model->getBasTime();
             $data['mac_times'] = $this->facility_model->getMacTime();
@@ -30,7 +29,7 @@
             $studentID = $this->input->post('student_id');
 
             $this->form_validation->set_rules('student_id', 'Student ID', 'required');
-            $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+            $this->form_validation->set_rules('booking_date', 'Date', 'required');
 
             if($this->form_validation->run()){
                 $insert_data = array(
@@ -41,14 +40,14 @@
                 );
     
                 if($this->booking_model->create_booking($insert_data)){
-                    $this->session->set_flashdata('response', 'Booking Successful.');
+                    $this->session->set_flashdata('response', 'Booking successful.');
                     redirect('booking');
                 }else{
-                    $this->session->set_flashdata('error', 'Facility Already Booked!');
+                    $this->session->set_flashdata('error', 'Facility already booked!');
                     redirect('booking');
                 }
             }else{
-                $this->session->set_flashdata('error', 'Student ID is required!');
+                $this->session->set_flashdata('error', 'Student ID or Date not entered!');
                 redirect('booking');
             }
         }

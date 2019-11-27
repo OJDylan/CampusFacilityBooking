@@ -10,7 +10,13 @@
 </div>
 
 <div class="container">
-    <input style="width: 10%" class="form-control mr-sm-2" type="text" id="searchID" onkeyup="searchFunction()" placeholder="Search ID">
+    <a class="btn btn-primary btn-primary" href="<?php echo base_url(); ?>available" role="button">Set Time Availability</a>
+</div>
+
+<br>
+
+<div class="container">
+    <input style="width: 10%" class="form-control mr-sm-2" type="text" id="search" onkeyup="searchFunction()" placeholder="Search ID">
 </div>
 
 <br>
@@ -43,7 +49,7 @@
             } else {
             ?>
                 <tr>
-                    <td colspan="3">No data found</td>
+                    <td colspan="5">No data found</td>
                 <tr>
             <?php   
             }

@@ -30,7 +30,7 @@
     <div class="form-group col-md-5">
       <h1>Step 2: Select Date</h1>
       <label class="col-form-label" for="date">Date</label>
-      <input style="width: 40%" type="text" class="form-control" id="datepicker" readonly="">
+      <input style="width: 40%" type="text" class="form-control" id="datepicker" readonly>
     </div>
   </div>
 </div>

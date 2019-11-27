@@ -101,7 +101,7 @@
   function searchFunction() {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("searchID");
+    input = document.getElementById("search");
     filter = input.value.toUpperCase();
     table = document.getElementById("booking_table");
     tr = table.getElementsByTagName("tr");
